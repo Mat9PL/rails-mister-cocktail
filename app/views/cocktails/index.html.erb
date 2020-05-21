@@ -1,0 +1,13 @@
+<h1>Cocktails#index</h1>
+<p>Find me in app/views/cocktails/index.html.erb</p>
+
+
+<ul>
+  <% @cocktails.each do |cocktail| %>
+    <li>
+      <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      <%= link_to 'delete', cocktail_path(cocktail), method: :delete %>
+    </li>
+  <% end %>
+<%= link_to '+ new cocktail', new_cocktail_path %>
+</ul>
