@@ -9,7 +9,11 @@
 require 'open-uri'
 require 'json'
 
-def create_ingredients
+Dose.delete_all
+Cocktail.delete_all
+Ingredient.delete_all
+
+def create_all_ingredients
   ingredient_list_json = open('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list').read
 
   ingredient_list = JSON.parse(ingredient_list_json)
@@ -20,13 +24,21 @@ def create_ingredients
   end
 end
 
-def create_cocktails
-  new_cocktail = Cocktail.new(name: 'vrebse')
+def create_cocktail
+  name = Faker::Hipster.words(number: (2..4).to_a.sample).join(" ").capitalize
+  new_cocktail = Cocktail.new(name: name)
   new_cocktail.save!
+  description = Faker::Hipster.words(number: (3..7).to_a.sample).join(" ").capitalize
+  ingredients = Ingredient.all
+
   (2..5).to_a.sample.times do
-    new_dose = Dose.new(description: "oaenronfe", ingredient: Ingredient.all.sample, cocktail: new_cocktail)
+    ingredient = ingredients.sample
+    new_dose = Dose.new(description: description, ingredient: ingredients.sample, cocktail: new_cocktail)
     new_dose.save!
+    ingredients -= [ingredient]
   end
 end
 
-create_cocktails
+create_all_ingredients
+
+15.times { create_cocktail }
