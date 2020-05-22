@@ -4,13 +4,21 @@
 
 <ul class='item-list'>
   <% @cocktails.each do |cocktail| %>
-    <li class='item'>
-      <%= link_to cocktail.name, cocktail_path(cocktail) %>
-      <%= link_to 'delete', cocktail_path(cocktail), method: :delete %>
+  
+    <li>
+      <div class='card'>
+        <div class='card-image'>
+            <%= link_to 'x', cocktail_path(cocktail), method: :delete %>
+        </div>
+        <div class='item-info'>
+          <h2>
+            <%= link_to cocktail.name, cocktail_path(cocktail) %>
+          </h2>
+        </div>
+      </div>
     </li>
   <% end %>
-  <li class='item'>
+  <li class='card car-empty'>
     <%= link_to '+ new cocktail', new_cocktail_path %>
   </li>
 </ul>
-
