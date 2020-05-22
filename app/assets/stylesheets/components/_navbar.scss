@@ -1,12 +1,24 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: rgb(90, 27, 27);
-}
+  // background-image: url(https://images.unsplash.com/photo-1535139262971-c51845709a48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  // background-image: url(https://images.unsplash.com/photo-1513781050488-6dd358209a1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80);
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2) ), url(https://images.unsplash.com/photo-1513781050488-6dd358209a1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80);
+  background-position: 30% 45%;
+  height: 400px;
+  background-size: cover;
+  // background-color: #32373B;
+  text-shadow: 1px 1px 3px rgb(255, 255, 255);
 
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 80px;
+  width: 100px;
+  text-shadow: 5px 5px 4px rgba(255, 255, 255, 1);
+  border-radius: 25%;
+  background-color: white;
+  background-size: cover;
+  padding: 0;
 }

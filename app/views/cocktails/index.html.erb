@@ -1,16 +1,16 @@
 <%= render 'navbar' %>
 
-<h1>Cocktails#index</h1>
-<p>Find me in app/views/cocktails/index.html.erb</p>
+<h1>Mister cocktail</h1>
 
-
-<ul>
+<ul class='item-list'>
   <% @cocktails.each do |cocktail| %>
-    <li>
+    <li class='item'>
       <%= link_to cocktail.name, cocktail_path(cocktail) %>
       <%= link_to 'delete', cocktail_path(cocktail), method: :delete %>
     </li>
   <% end %>
-<%= link_to '+ new cocktail', new_cocktail_path %>
+  <li class='item'>
+    <%= link_to '+ new cocktail', new_cocktail_path %>
+  </li>
 </ul>
 

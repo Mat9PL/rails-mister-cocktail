@@ -35,7 +35,7 @@ def create_cocktail
     ingredient = ingredients.sample
     new_dose = Dose.new(description: description, ingredient: ingredients.sample, cocktail: new_cocktail)
     new_dose.save!
-    ingredients -= [ingredient]
+    ingredients -= ingredient
   end
 end
 
