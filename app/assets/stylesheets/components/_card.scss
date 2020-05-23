@@ -1,77 +1,72 @@
-.card-product {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-}
-
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product .card-product-infos {
-  padding: 16px;
-}
-
 .card {
-  width: 300px;
+  width: 250px;
+  height: 350px;
   background-color: rgba(50, 55, 59, 0.801);
   margin: 5px;
-  border-radius: 4px;
+  border-radius: 10px;
   color: white;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  &:hover {
+    background-color: rgba(98, 110, 119, 0.801);
+    color: rgb(221, 221, 131);
+  }
 }
 
 .card h2 {
   text-align: center;
+  margin: 2px 10px;
 }
 
-.card h2 a {
+.card a {
   color: white;
   text-decoration: none
 }
 
-.card .card-image {
+.card img {
+  width: 248px;
+  height: 250px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.card .card-delete {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transform: rotateY(0deg) rotate(45deg);
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 0px 7px;
+  text-align: center;
+  color: white;
+  &:hover {
+    color: rgb(221, 221, 131);
+    border: 1px solid rgb(221, 221, 131);
+  }
+}
+
+.card-empty {
+  text-align: center;
+  color: white;
+  font-size: large;
+  font-size: 150px;
+  text-decoration: none;
+}
+
+.card .card-new-image {
   height: 300px;
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2) ), url(https://assets.afcdn.com/recipe/20180705/80274_w1024h768c1cx2378cy1278cxt0cyt0cxb4799cyb3199.jpg);
   background-position: center;
   background-size: cover;
   position: relative;
+  top: 50px;
+  text-decoration: none;
+  color: white;
 }
 
-.card .card-image a {
-  position: absolute;
-  right: 20px;
-  top: 10px;
-  border: 1px solid white;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  text-align: center;
+.card .card-item-info {
   color: white;
   text-decoration: none;
 }
 
-.car-empty {
-  text-align: center;
-  color: white;
-  font-size: large;
+a {
+  text-decoration: none;
 }

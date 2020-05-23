@@ -1,24 +1,29 @@
 <%= render 'navbar' %>
-
-<h1>Mister cocktail</h1>
-
-<ul class='item-list'>
-  <% @cocktails.each do |cocktail| %>
-  
-    <li>
-      <div class='card'>
-        <div class='card-image'>
-            <%= link_to 'x', cocktail_path(cocktail), method: :delete %>
-        </div>
-        <div class='item-info'>
-          <h2>
-            <%= link_to cocktail.name, cocktail_path(cocktail) %>
-          </h2>
-        </div>
-      </div>
-    </li>
-  <% end %>
-  <li class='card car-empty'>
-    <%= link_to '+ new cocktail', new_cocktail_path %>
-  </li>
-</ul>
+<div class="container">
+  <ul class='item-list'>
+    <% @cocktails.each do |cocktail| %>
+    
+      <li>
+        <%= link_to cocktail_path(cocktail) do %>
+          <div class='card'>
+            <%= image_tag 'https://assets.afcdn.com/recipe/20180705/80274_w1024h768c1cx2378cy1278cxt0cyt0cxb4799cyb3199.jpg' %>
+            <%= link_to '+', cocktail_path(cocktail), method: :delete, class: 'card-delete' %>
+            <div class='card-item-info'>
+              <h2>
+                <%= cocktail.name %>
+              </h2>
+            </div>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+      <li class='card card-empty'>
+        <%= link_to new_cocktail_path do %>
+          <div>
+            <div class='card-new-image'><i class="fas fa-glass-martini-alt"></i></div>
+            <h2 class='card-item-info'>+ add new</h2>
+          </div>
+        <% end %>
+      </li>
+  </ul>
+</div>
