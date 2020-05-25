@@ -2,9 +2,9 @@
 
 <%= link_to 'Mister Cocktail', cocktails_path %>
 
-<h1><%= @cocktail.name %></h1>
+<h2><%= @cocktail.name %></h2>
 
-<h2>Ingredients:</h2>
+<h3>Ingredients:</h3>
 <ul>
   <% @cocktail.doses.each do |dose| %>
     <li>
